@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: loan-claims-management
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+        placeholder: "Server=YOUR_SERVER.database.windows.net,1433;Initial Catalog=LoanClaimsDB;Persist Security Info=False;User ID=YOUR_USER;Password=YOUR_PASSWORD;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
